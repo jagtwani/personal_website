@@ -10322,6 +10322,20 @@ header.masthead .masthead-heading {
   border-radius: 100%;
   background-color: #fed136;
 }
+
+.timeline > li .timeline-image_custom {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  width: 80px;
+  height: 150px;
+  margin-left: 0;
+  text-align: center;
+  color: white;
+  border: 7px solid #e9ecef;
+  border-radius: 100%;
+  background-color: #fed136;
+}
 .timeline > li .timeline-image h4 {
   font-size: 10px;
   line-height: 14px;
