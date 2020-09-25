@@ -18,5 +18,8 @@
     <None Include="index.html">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="css\styles.css">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
