@@ -10142,7 +10142,8 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/Mecc_Headshot_3.jpg");
+  background-image: none;
+  background-color: #212529;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
