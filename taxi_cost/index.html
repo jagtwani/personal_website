@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="NYC Taxi Fare Estimator" />
+    <meta name="author" content="Jagjeet Wani" />
+    <title>NYC Taxi Fare Estimator | Jagjeet Wani</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 72px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        .taxi-hero {
+            padding: 5rem 0 2rem;
+        }
+        .taxi-subheading {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .taxi-card {
+            border: 0;
+            box-shadow: 0 10px 30px rgba(33, 37, 41, 0.08);
+            border-radius: 0.75rem;
+        }
+        .result-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #d4a417;
+        }
+        .small-note {
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/">Jagjeet Wani</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/taxi_cost">Taxi Cost</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="taxi-hero text-center">
+        <div class="container">
+            <h1 class="section-heading text-uppercase">NYC Taxi Fare Estimator</h1>
+            <p class="section-subheading text-muted taxi-subheading">Enter a pickup and dropoff location to estimate an NYC yellow taxi fare. Autocomplete and live pricing logic will be added in the next phase.</p>
+        </div>
+    </section>
+
+    <section class="page-section pt-0" id="taxi-estimator">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card taxi-card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="text-uppercase mb-4">Trip Details</h3>
+                            <div class="form-group">
+                                <label for="pickup-location">Pickup location</label>
+                                <input id="pickup-location" class="form-control" type="text" placeholder="Example: Times Square, Manhattan" />
+                            </div>
+                            <div class="form-group">
+                                <label for="dropoff-location">Dropoff location</label>
+                                <input id="dropoff-location" class="form-control" type="text" placeholder="Example: JFK Airport" />
+                            </div>
+                            <div class="form-group">
+                                <label for="pickup-time">Pickup time</label>
+                                <input id="pickup-time" class="form-control" type="datetime-local" />
+                            </div>
+                            <div class="d-flex align-items-center mt-4">
+                                <button class="btn btn-primary text-uppercase" type="button" disabled>Estimate Fare (Coming Soon)</button>
+                                <span class="text-muted ml-3 small-note">UI only in this version</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card taxi-card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="text-uppercase mb-4">Estimated Fare</h3>
+                            <p class="result-number mb-1">$--.--</p>
+                            <p class="text-muted mb-4">Range: $-- to $--</p>
+
+                            <div class="d-flex justify-content-between border-top pt-3">
+                                <span>Base fare</span>
+                                <span>$--.--</span>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <span>Distance charge</span>
+                                <span>$--.--</span>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <span>Time charge</span>
+                                <span>$--.--</span>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <span>NYC surcharges and taxes</span>
+                                <span>$--.--</span>
+                            </div>
+
+                            <hr />
+                            <p class="small-note text-muted mb-2">This page estimates NYC yellow taxi fares only.</p>
+                            <p class="small-note text-muted mb-0">Final fare can vary based on route, traffic, tolls, and waiting time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center">Copyright &copy; Jagjeet Wani 2026</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
