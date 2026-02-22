@@ -37,6 +37,9 @@
         .small-note {
             font-size: 0.95rem;
         }
+        .result-message {
+            min-height: 2.5rem;
+        }
     </style>
 </head>
 <body>
@@ -59,7 +62,7 @@
     <section class="taxi-hero text-center">
         <div class="container">
             <h1 class="section-heading text-uppercase">NYC Taxi Fare Estimator</h1>
-            <p class="section-subheading text-muted taxi-subheading">Enter a pickup and dropoff location to estimate an NYC yellow taxi fare. Autocomplete and live pricing logic will be added in the next phase.</p>
+            <p class="section-subheading text-muted taxi-subheading">Enter pickup and dropoff locations to estimate an NYC yellow taxi fare using TLC-style rules.</p>
         </div>
     </section>
 
@@ -85,8 +88,8 @@
                                 <input id="pickup-time" class="form-control" type="datetime-local" />
                             </div>
                             <div class="d-flex align-items-center mt-4">
-                                <button class="btn btn-primary text-uppercase" type="button" disabled>Estimate Fare (Coming Soon)</button>
-                                <span class="text-muted ml-3 small-note">UI only in this version</span>
+                                <button id="estimate-fare-btn" class="btn btn-primary text-uppercase" type="button">Estimate Fare</button>
+                                <span id="estimate-status" class="text-muted ml-3 small-note">Select valid pickup and dropoff places.</span>
                             </div>
                         </div>
                     </div>
@@ -96,29 +99,34 @@
                     <div class="card taxi-card h-100">
                         <div class="card-body p-4">
                             <h3 class="text-uppercase mb-4">Estimated Fare</h3>
-                            <p class="result-number mb-1">$--.--</p>
-                            <p class="text-muted mb-4">Range: $-- to $--</p>
+                            <p id="fare-total" class="result-number mb-1">$--.--</p>
+                            <p id="fare-range" class="text-muted mb-4">Range: $-- to $--</p>
+                            <p id="fare-message" class="small-note result-message text-muted mb-3">Enter trip details and click Estimate Fare.</p>
 
                             <div class="d-flex justify-content-between border-top pt-3">
                                 <span>Base fare</span>
-                                <span>$--.--</span>
+                                <span id="fare-base">$--.--</span>
                             </div>
                             <div class="d-flex justify-content-between mt-2">
                                 <span>Distance charge</span>
-                                <span>$--.--</span>
+                                <span id="fare-distance">$--.--</span>
                             </div>
                             <div class="d-flex justify-content-between mt-2">
                                 <span>Time charge</span>
-                                <span>$--.--</span>
+                                <span id="fare-time">$--.--</span>
                             </div>
                             <div class="d-flex justify-content-between mt-2">
                                 <span>NYC surcharges and taxes</span>
-                                <span>$--.--</span>
+                                <span id="fare-surcharges">$--.--</span>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <span>Tolls and tip</span>
+                                <span id="fare-tolls-tip">Not included</span>
                             </div>
 
                             <hr />
-                            <p class="small-note text-muted mb-2">This page estimates NYC yellow taxi fares only.</p>
-                            <p class="small-note text-muted mb-0">Final fare can vary based on route, traffic, tolls, and waiting time.</p>
+                            <p id="fare-rate-message" class="small-note text-muted mb-2">Rate message: Rate #01 - Standard City Rate.</p>
+                            <p class="small-note text-muted mb-0">Estimate excludes tip and tolls; actual fare can vary by route, traffic, tolls, and final TLC interpretation.</p>
                         </div>
                     </div>
                 </div>
